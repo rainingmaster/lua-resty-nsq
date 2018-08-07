@@ -4,9 +4,6 @@ local nsq_conn     = require "resty.nsq.conn"
 
 local new_tab      = nsq_conn.new_tab
 local check_name   = nsq_conn.check_name
-local byte         = string.byte
-local char         = string.char
-local concat       = table.concat
 local type         = type
 local setmetatable = setmetatable
 local tonumber     = tonumber

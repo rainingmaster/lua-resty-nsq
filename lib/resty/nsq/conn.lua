@@ -152,10 +152,8 @@ local function _read_reply(self)
         return nil, nil, err
     end
 
-    local size = _byte4_2_num(byte(data, 1), byte(data, 2), byte(data, 3),
-                              byte(data, 4)) - 4 -- length of frame_type
-    local frame_type = _byte4_2_num(byte(data, 5), byte(data, 6), byte(data, 7),
-                              byte(data, 8))
+    local size = _byte4_2_num(byte(data, 1, 4)) - 4 -- length of frame_type
+    local frame_type = _byte4_2_num(byte(data, 5, 8))
 
     data, err = sock:receive(size)
     if not data then
@@ -182,10 +180,7 @@ local function _read_reply(self)
     end
 
     if frame_type == frame_type_message then
-        local timestamp = _int64_2_timestamp(byte(data, 1), byte(data, 2),
-                                             byte(data, 3), byte(data, 4),
-                                             byte(data, 5), byte(data, 6),
-                                             byte(data, 7), byte(data, 8))
+        local timestamp = _int64_2_timestamp(byte(data, 1, 8))
 
         return {
             timestamp = timestamp,
@@ -349,10 +344,12 @@ function _M.read_loop(self, lock)
             end
 
         else
+            self.read_looping = false
             return nil, err
         end
     end
 
+    self.read_looping = false
     return nil, "exiting"
 end
 

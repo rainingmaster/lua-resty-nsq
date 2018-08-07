@@ -5,9 +5,6 @@ local semaphore    = require "ngx.semaphore"
 
 local new_tab      = nsq_conn.new_tab
 local check_name   = nsq_conn.check_name
-local byte         = string.byte
-local char         = string.char
-local concat       = table.concat
 local ngx_spawn    = ngx.thread.spawn
 local ngx_wait     = ngx.thread.wait
 local type         = type
