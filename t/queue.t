@@ -130,6 +130,10 @@ nil:fulled, in 11
                     -- ngx.log(ngx.ERR, ret, ":", err, ", in ", i)
                     -- ngx.log(ngx.ERR, ret, ":", err, ", in ", i)
                     -- ngx.log(ngx.ERR, ret, ":", err, ", in ", i)
+                    -- ngx.log(ngx.ERR, ret, ":", err, ", in ", i)
+                    -- ngx.log(ngx.ERR, ret, ":", err, ", in ", i)
+                    -- ngx.log(ngx.ERR, ret, ":", err, ", in ", i)
+                    -- ngx.log(ngx.ERR, ret, ":", err, ", in ", i)
                 end
 
                 if i == 5 then
