@@ -128,6 +128,8 @@ nil:fulled, in 11
                 if not ret then
                     ngx.say(ret, ":", err, ", in ", i)
                     -- ngx.log(ngx.ERR, ret, ":", err, ", in ", i)
+                    -- ngx.log(ngx.ERR, ret, ":", err, ", in ", i)
+                    -- ngx.log(ngx.ERR, ret, ":", err, ", in ", i)
                 end
 
                 if i == 5 then
