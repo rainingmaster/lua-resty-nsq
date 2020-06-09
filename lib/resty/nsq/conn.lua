@@ -84,6 +84,7 @@ local function _int64_2_timestamp(b1, b2, b3, b4, b5, b6, b7, b8)
 end
 
 
+-- test the code
 function _M.new(self)
     local sock, err = tcp()
     if not sock then
