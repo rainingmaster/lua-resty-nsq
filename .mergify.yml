@@ -1,0 +1,22 @@
+pull_request_rules:
+  - name: tag no test cases update when update source code
+    conditions:
+      - files~=^lib/
+      - -files~=^t/
+    actions:
+      label:
+        add:
+          - no-test-cases
+  - name: tag test cases update when update source code
+    conditions:
+      - files~=^lib/
+      - files~=^t/
+    actions:
+      label:
+        - remove_all
+  - name: ask to resolve conflict
+    conditions:
+      - conflict
+    actions:
+      comment:
+        message: This pull request is now in conflicts.
